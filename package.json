@@ -1,5 +1,5 @@
 {
-  "name": "layoutcss",
+  "name": "@nimbusteam/layoutcss",
   "version": "0.0.1",
   "description": "CSS framework of a new era",
   "main": "index.js",
