@@ -8,18 +8,15 @@
 
 [![Donation][DonationBadge]][DonationUrl]
 [![Discord][DiscordBadge]][DiscordUrl]
-[![Reddit][RedditBadge]][RedditUrl]
 </div>
 
 [DiscordBadge]: https://img.shields.io/discord/1151460678280949821?label=Discord&logo=discord&logoColor=white
 [DonationBadge]: https://img.shields.io/badge/Donation-7ba2f2?logo=stripe&logoColor=white
-[RedditBadge]: https://img.shields.io/badge/Reddit-ff4b09?logo=reddit&logoColor=white
 
 
 
 [DiscordURL]: https://discord.gg/trP6WABgYE
 [DonationURL]: https://buy.stripe.com/aEU6qjbMu5cMaNa5kk 
-[RedditURL]: https://reddit.com
 
 ## How to use ?
 
