@@ -47,8 +47,8 @@
 - If you want to use it with svelte, react or whatever just modify package.json like this, this is an example with svelte :
 ```js
 "scripts": {
-		"dev": "vite dev & layoutcss watch",
-        ...
+	"dev": "vite dev & layoutcss watch",
+    ...
 }
 ```
 
