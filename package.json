@@ -3,11 +3,15 @@
   "version": "0.0.1",
   "description": "CSS framework of a new era",
   "main": "index.js",
-    "repository": {
+  "repository": {
     "type": "git",
     "url": "https://github.com/nimbus-corp/layoutcss"
   },
-  "keywords": ["css framework", "front end", "css"],
+  "keywords": [
+    "css framework",
+    "front end",
+    "css"
+  ],
   "scripts": {
     "test": "jest"
   },
@@ -22,6 +26,7 @@
   "dependencies": {
     "chokidar": "^3.5.3",
     "htmlparser2": "^9.0.0",
-    "less": "^4.2.0"
+    "less": "^4.2.0",
+    "yargs": "^17.7.2"
   }
 }
