@@ -1,0 +1,37 @@
+.switcher(){
+  switcher{
+    display: flex;
+    flex-wrap: wrap;
+
+    & > *{
+      flex-grow: 1;
+    }
+
+  }
+}
+
+.switcher-threshold(@threshold){
+  switcher[threshold="@{threshold}"] > * {
+    flex-basis: calc((@threshold - 100%) * 999);
+  }
+}
+
+.switcher-limit(@limit){
+  switcher[limit="@{limit}"] {
+    & > :nth-last-child(n+@{limit}), & > :nth-last-child(n+@{limit}) ~ * {
+      flex-basis: 100%;
+    }
+  }
+}
+
+.switcher-gap(@gap){
+  switcher[gap="@{gap}"]{
+    gap: pow(@harmonic-ratio, @gap)*1rem;
+  }
+}
+
+.switcher-reverse(){
+  switcher[reverse]{
+    flex-wrap: wrap-reverse;
+  }
+}

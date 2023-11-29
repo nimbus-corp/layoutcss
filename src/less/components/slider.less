@@ -1,0 +1,43 @@
+.slider(){
+  slider{
+    display: flex;
+    block-size: auto;
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    & > * {
+      flex-shrink: 0;
+      flex-grow: 0;
+      height: auto;
+      min-width: 0px;
+    }
+
+    & > img{
+      object-fit: cover;
+    }
+  }
+}
+
+.slider-hide-bar(){
+  slider[hide-bar]{
+    overflow: hidden;
+  }
+}
+
+.slider-item-width(@item-width){
+  slider[hide-bar]{
+    overflow: hidden;
+  }
+}
+
+.slider-height(@height){
+  slider[height="@{height}"]{
+    block-size: @height;
+  }
+}
+
+.slider-gap(@gap){
+  slider[gap="@{gap}"]{
+    gap: pow(@harmonic-ratio, @gap)*1rem;
+  }
+}

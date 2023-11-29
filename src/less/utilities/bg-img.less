@@ -1,0 +1,15 @@
+.bg-img(){
+  [bg-img]{
+    background-origin: border-box;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+}
+
+.bg-img(@value){
+  // even for url we have to let the quotes in selector
+  [bg-img="@{value}"]{
+    background-image: url(@value);
+  }
+}

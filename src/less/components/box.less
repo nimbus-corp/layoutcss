@@ -1,0 +1,13 @@
+.box(){
+  box{
+    box-sizing: border-box;
+    display: block;
+    max-inline-size:fit-content;
+  }
+}
+
+.box-max-width(@max-width){
+  box[max-width="@{max-width}"]{
+    max-inline-size: @max-width; 
+  }
+}

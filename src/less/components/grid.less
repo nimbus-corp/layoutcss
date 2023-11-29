@@ -1,0 +1,38 @@
+.grid(){
+  grid{
+    display: grid;
+  }
+}
+
+.grid-gap(@gap){
+  grid[gap="@{gap}"]{
+    gap: pow(@harmonic-ratio, @gap)*1rem;
+  }
+}
+
+.grid-group(@min-cell-width:null, @min-cols:null, @max-cols:null, @gap:null){
+
+  grid[min-cell-width="@{min-cell-width}"][min-cols="@{min-cols}"][max-cols="@{max-cols}"] when (isnumber(@min-cell-width)) and (isnumber(@min-cols)) and (isnumber(@max-cols)){
+    @gap-delta-min: if((isnumber(@gap)),((pow(@harmonic-ratio, @gap) * (@min-cols - 0.98) / @min-cols)*1rem),0rem);
+    @gap-delta-max: if((isnumber(@gap)),((pow(@harmonic-ratio, @gap) * (@max-cols - 0.98) / @max-cols)*1rem),0rem);
+    @fr: (1/@min-cols)*1fr;
+    grid-template-columns: e('repeat(auto-fit, minmax(min((100% / @{min-cols} - @{gap-delta-min}),max(@{min-cell-width}, (100% / @{max-cols} - @{gap-delta-max}))),@{fr}))')
+  }
+
+  grid[min-cell-width="@{min-cell-width}"][min-cols="@{min-cols}"] when (isnumber(@min-cell-width)) and (isnumber(@min-cols)) and (@max-cols=null){
+    @gap-delta-min: if((isnumber(@gap)),((pow(@harmonic-ratio, @gap) * (@min-cols - 0.98) / @min-cols)*1rem),0rem);
+    grid-template-columns: e('repeat(auto-fit, minmax(min((100% / @{min-cols} - @{gap-delta-min}), @{min-cell-width}), 1fr))');
+  }
+
+  grid[min-cell-width="@{min-cell-width}"][max-cols="@{max-cols}"] when (isnumber(@min-cell-width)) and (isnumber(@max-cols)) and (@min-cols=null){
+    @gap-delta-max: if((isnumber(@gap)),((pow(@harmonic-ratio, @gap) * (@max-cols - 0.98) / @max-cols)*1rem),0rem);
+    grid-template-columns: e('repeat(auto-fit, minmax(min(100%, max(@{min-cell-width}, (100% / @{max-cols} - @{gap-delta-max}))),1fr))');
+  }
+
+  grid[min-cell-width="@{min-cell-width}"] when (isnumber(@min-cell-width)) and (@max-cols=null) and (@max-cols=null){
+    grid-template-columns: e('repeat(auto-fit, minmax(min(@{min-cell-width}, 100%),1fr))');
+  }
+  
+
+  
+}

@@ -1,0 +1,46 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  img {
+    display: block;
+    width:100%;
+  }
+  
+  a {
+    all: unset;
+    display: inline-block;
+    cursor: pointer;
+  }
+  
+  
+  input {
+    display: block;
+    width:100%;
+  }
+  
+  button{
+    cursor: pointer;
+    color:inherit;
+  }
+  
+  span, strong, label{
+    display: inline-block;
+  }
+
+@interval: unit(@max-screen - @min-screen);
+@substract-resizing-ratio : @resizing-ratio - 1;
+@relative-screen-width: e('(100vw - @{min-screen})');
+@denominateur: e('@{relative-screen-width} / @{interval}');
+@final-denominateur: e('(@{substract-resizing-ratio} * @{denominateur} + 1px) / @{resizing-ratio}');
+
+html{
+  font-size: clamp(
+    calc(@base-value / @resizing-ratio), 
+    calc(unit(@base-value) * @final-denominateur), 
+    @base-value
+ );
+}
+

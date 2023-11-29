@@ -1,0 +1,19 @@
+.extender(){
+  extender{
+    display:block;
+    width: calc(100% + var(--pr) + var(--pl));
+    margin-inline-start: calc(0px - var(--pl));
+    margin-inline-end: calc(0px - var(--pr));
+  }
+}
+
+.extender-screen(){
+  extender[screen]{
+    width: 100vw;
+    position: relative;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    margin-inline-start: initial;
+    margin-inline-end: initial;
+  }
+}

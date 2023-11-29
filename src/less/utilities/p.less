@@ -1,0 +1,49 @@
+.p(@value){
+  [p="@{value}"]{
+    padding: pow(@harmonic-ratio, @value)*1rem;
+    --pl: $padding;
+    --pr: $padding;
+  }
+}
+
+.pt(@value){
+  [pt="@{value}"]{
+    padding-top: pow(@harmonic-ratio, @value)*1rem;
+  }
+}
+
+.pb(@value){
+  [pb="@{value}"]{
+    padding-bottom: pow(@harmonic-ratio, @value)*1rem;
+  }
+}
+
+.pl(@value){
+  [pl="@{value}"]{
+    padding-left: pow(@harmonic-ratio, @value)*1rem;
+    --pl: $padding-left;
+  }
+}
+
+.pr(@value){
+  [pr="@{value}"]{
+    padding-right: pow(@harmonic-ratio, @value)*1rem;
+    --pr: $padding-right;
+  }
+}
+
+.px(@value){
+  [px="@{value}"]{
+    padding-left: pow(@harmonic-ratio, @value)*1rem;
+    padding-right: $padding-left;
+    --pl: $padding-left;
+    --pr: $padding-right;
+  }
+}
+
+.py(@value){
+  [py="@{value}"]{
+    padding-top: pow(@harmonic-ratio, @value)*1rem;
+    padding-bottom: $padding-top;
+  }
+}

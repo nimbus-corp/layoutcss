@@ -1,0 +1,27 @@
+{
+  "name": "layout-css",
+  "version": "0.0.1",
+  "description": "CSS framework of a new era",
+  "main": "index.js",
+    "repository": {
+    "type": "git",
+    "url": "https://github.com/npm/cli.git"
+  },
+  "keywords": ["css framework", "front end", "css"],
+  "scripts": {
+    "test": "jest"
+  },
+  "bin": {
+    "layout-css": "./bin/index.js"
+  },
+  "author": "NimbusCorp",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  },
+  "dependencies": {
+    "chokidar": "^3.5.3",
+    "htmlparser2": "^9.0.0",
+    "less": "^4.2.0"
+  }
+}

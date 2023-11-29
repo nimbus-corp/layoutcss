@@ -1,0 +1,18 @@
+.stack(){
+  stack{
+    display: block;
+
+  & > *{
+    margin-block: 0;
+    }
+
+  }
+}
+
+.stack-gap(@gap){
+  stack[gap="@{gap}"]{
+    & > * + * {
+      margin-block-start: pow(@harmonic-ratio, @gap)*1rem;
+    }
+  }
+}

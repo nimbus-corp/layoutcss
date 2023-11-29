@@ -1,0 +1,28 @@
+.icon(){
+  icon{
+  display: inline-flex;
+  align-items: baseline;
+  width: fit-content;
+
+    & > :nth-child(1) {
+        height: calc(var(--font-size) * 1rem);
+        width: auto;
+    }
+
+  }
+}
+
+.icon-scale(@scale){
+  icon[scale="@{scale}"] >:nth-child(1){
+    height: @scale*1rem;
+  }
+}
+
+.icon-group(@gap:null, @gap-dir:start){
+@gap-dir-selector: if((@gap-dir=end),e('[gap-dir="end"]'),);
+@opposite-dir: if((@gap-dir=start),end,start);
+  icon@{gap-dir-selector}[gap="@{gap}"] >:nth-child(1) when (isnumber(@gap)) {
+    margin-inline-@{gap-dir}: pow(@harmonic-ratio, @gap)*1rem;
+    margin-inline-@{opposite-dir}: initial;
+  }
+}

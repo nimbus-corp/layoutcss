@@ -1,0 +1,29 @@
+.center(){
+  center{
+    box-sizing: content-box;
+    max-inline-size: fit-content;
+    margin-inline: auto;
+    display: block;
+    text-align: initial;
+  }
+}
+
+.center-max-width(@max-width){
+  center[max-width="@{max-width}"]{
+    max-inline-size: @max-width; 
+  }
+}
+
+.center-and-text(){
+  center[and-text]{
+    text-align:center;
+  }
+}
+
+.center-recursive(){
+  center[recursive]{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+  }
+}
