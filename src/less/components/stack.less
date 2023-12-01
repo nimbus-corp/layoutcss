@@ -1,5 +1,5 @@
-.stack(){
-  stack{
+.stack-l(){
+  stack-l{
     display: block;
 
   & > *{
@@ -9,8 +9,8 @@
   }
 }
 
-.stack-gap(@gap){
-  stack[gap="@{gap}"]{
+.stack-l-gap(@gap){
+  stack-l[gap="@{gap}"]{
     & > * + * {
       margin-block-start: pow(@harmonic-ratio, @gap)*1rem;
     }

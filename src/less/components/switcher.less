@@ -1,5 +1,5 @@
-.switcher(){
-  switcher{
+.switcher-l(){
+  switcher-l{
     display: flex;
     flex-wrap: wrap;
 
@@ -10,28 +10,28 @@
   }
 }
 
-.switcher-threshold(@threshold){
-  switcher[threshold="@{threshold}"] > * {
+.switcher-l-threshold(@threshold){
+  switcher-l[threshold="@{threshold}"] > * {
     flex-basis: calc((@threshold - 100%) * 999);
   }
 }
 
-.switcher-limit(@limit){
-  switcher[limit="@{limit}"] {
+.switcher-l-limit(@limit){
+  switcher-l[limit="@{limit}"] {
     & > :nth-last-child(n+@{limit}), & > :nth-last-child(n+@{limit}) ~ * {
       flex-basis: 100%;
     }
   }
 }
 
-.switcher-gap(@gap){
-  switcher[gap="@{gap}"]{
+.switcher-l-gap(@gap){
+  switcher-l[gap="@{gap}"]{
     gap: pow(@harmonic-ratio, @gap)*1rem;
   }
 }
 
-.switcher-reverse(){
-  switcher[reverse]{
+.switcher-l-reverse(){
+  switcher-l[reverse]{
     flex-wrap: wrap-reverse;
   }
 }

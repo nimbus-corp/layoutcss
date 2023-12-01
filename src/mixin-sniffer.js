@@ -28,43 +28,43 @@ const utilities = {
 };
 
 const components = {
-  "box": {
+  "box-l": {
     "params": ["max-width"],
   },
-  "center": {
+  "center-l": {
     "params": ["max-width", "and-text", "recursive"],
   },
-  "extender": {
+  "extender-l": {
     "params": ["screen"],
   },
-  "grid": {
+  "grid-l": {
     "params": ["gap"],
     "group": ["min-cell-width", "min-cols", "max-cols", "gap"],
   },
-  "icon": {
+  "icon-l": {
     "params": ["scale"],
     "group": ["gap", "gap-dir"],
   },
-  "ledge": {
+  "ledge-l": {
     "params": ["gap", "direction", "justify", "align", "nowrap", "twin-width"],
   },
-  "outsider": {
+  "outsider-l": {
     "params": ["position", "top", "bottom", "left", "right"],
   },
-  "rack": {
+  "rack-l": {
     "params": ["height", "min-height", "gap"],
   },
-  "sidebar": {
+  "sidebar-l": {
     "params": ["shrink", "gap", "reverse"],
     "group": ["side", "side-width", "content-min"],
   },
-  "slider": {
+  "slider-l": {
     "params": ["hide-bar", "item-width", "gap", "height"],
   },
-  "stack": {
+  "stack-l": {
     "params": ["gap"],
   },
-  "switcher": {
+  "switcher-l": {
     "params": ["threshold", "limit", "gap", "reverse"],
   },
 };

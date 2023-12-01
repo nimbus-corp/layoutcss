@@ -1,5 +1,5 @@
-.rack(){
-  rack{
+.rack-l(){
+  rack-l{
     display:flex;
     flex-direction:column;
 
@@ -18,20 +18,20 @@
   }
 }
 
-.rack-height(@height){
-  rack[height="@{height}"]{
+.rack-l-height(@height){
+  rack-l[height="@{height}"]{
     height: @height;
     overflow-y: scroll;
   }
 }
 
-.rack-min-height(@min-height){
-  rack[min-height="@{min-height}"]{
+.rack-l-min-height(@min-height){
+  rack-l[min-height="@{min-height}"]{
     min-height: @min-height;
   }
 }
 
-.rack-gap(@gap){
+.rack-l-gap(@gap){
   rack[gap="@{gap}"]{
     gap: pow(@harmonic-ratio, @gap)*1rem;
   }

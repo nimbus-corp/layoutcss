@@ -1,5 +1,5 @@
-.ledge(){
-  ledge{
+.ledge-l(){
+  ledge-l{
     display:flex;
     flex-wrap: wrap;
 
@@ -9,40 +9,40 @@
   }
 }
 
-.ledge-nowrap(){
-  ledge[nowrap]  {
+.ledge-l-nowrap(){
+  ledge-l[nowrap]  {
       flex-wrap:nowrap;
   }
 }
 
-.ledge-twin-width(){
-  ledge[twin-width] > * {
+.ledge-l-twin-width(){
+  ledge-l[twin-width] > * {
       flex-grow:1;
       flex-basis:0;
       min-width: 0;
   }
 }
 
-.ledge-direction(@direction){
-  ledge[direction="@{direction}"]{
+.ledge-l-direction(@direction){
+  ledge-l[direction="@{direction}"]{
     flex-direction: @direction;
   }
 }
 
-.ledge-justify(@justify){
-  ledge[justify="@{justify}"]{
+.ledge-l-justify(@justify){
+  ledge-l[justify="@{justify}"]{
     justify-content: @justify;
   }
 }
 
-.ledge-align(@align){
-  ledge[align="@{align}"]{
+.ledge-l-align(@align){
+  ledge-l[align="@{align}"]{
     align-items: @align;
   }
 }
 
-.ledge-gap(@gap){
-  ledge[gap="@{gap}"]{
+.ledge-l-gap(@gap){
+  ledge-l[gap="@{gap}"]{
     gap: pow(@harmonic-ratio, @gap)*1rem;
   }
 }

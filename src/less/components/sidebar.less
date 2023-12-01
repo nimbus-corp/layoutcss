@@ -1,36 +1,36 @@
-.sidebar(){
-  sidebar{
+.sidebar-l(){
+  sidebar-l{
     display: flex;
     flex-wrap: wrap;
   }
 }
 
-.sidebar-reverse(){
-  sidebar[reverse]{
+.sidebar-l-reverse(){
+  sidebar-l[reverse]{
     flex-wrap: wrap-reverse;
   }
 }
 
-.sidebar-shrink(){
-  sidebar[shrink]{
+.sidebar-l-shrink(){
+  sidebar-l[shrink]{
     align-items: flex-start;
   }
 }
 
-.sidebar-gap(@gap){
-  sidebar[gap="@{gap}"]{
+.sidebar-l-gap(@gap){
+  sidebar-l[gap="@{gap}"]{
     gap: pow(@harmonic-ratio, @gap)*1rem;
   }
 }
 
-.sidebar-group(@side: left, @side-width: auto, @content-min: 50%){
+.sidebar-l-group(@side: left, @side-width: auto, @content-min: 50%){
   @side-selector: if((@side=right),e('[side="right"]'),);
   @side-width-selector: if((isnumber(@side-width)),e('[side-width="@{side-width}"]'),);
   @content-min-selector: if((not(@content-min=50%)),e('[content-min="@{content-min}"]'),);
 
   @selector-one: if((@side = left), e(':first-child'), e(':last-child'));
   @selector-two: if((@side = left), e(':last-child'), e(':first-child'));
-  sidebar@{side-selector}@{side-width-selector}@{content-min-selector}{
+  sidebar-l@{side-selector}@{side-width-selector}@{content-min-selector}{
 
     & > @{selector-one}{
       flex-basis: @side-width;

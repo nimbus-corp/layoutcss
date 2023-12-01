@@ -1,5 +1,5 @@
-.icon(){
-  icon{
+.icon-l(){
+  icon-l{
   display: inline-flex;
   align-items: baseline;
   width: fit-content;
@@ -12,13 +12,13 @@
   }
 }
 
-.icon-scale(@scale){
-  icon[scale="@{scale}"] >:nth-child(1){
+.icon-l-scale(@scale){
+  icon-l[scale="@{scale}"] >:nth-child(1){
     height: @scale*1rem;
   }
 }
 
-.icon-group(@gap:null, @gap-dir:start){
+.icon-l-group(@gap:null, @gap-dir:start){
 @gap-dir-selector: if((@gap-dir=end),e('[gap-dir="end"]'),);
 @opposite-dir: if((@gap-dir=start),end,start);
   icon@{gap-dir-selector}[gap="@{gap}"] >:nth-child(1) when (isnumber(@gap)) {

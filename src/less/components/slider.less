@@ -1,5 +1,5 @@
-.slider(){
-  slider{
+.slider-l(){
+  slider-l{
     display: flex;
     block-size: auto;
     overflow-x: auto;
@@ -18,26 +18,26 @@
   }
 }
 
-.slider-hide-bar(){
-  slider[hide-bar]{
+.slider-l-hide-bar(){
+  slider-l[hide-bar]{
     overflow: hidden;
   }
 }
 
-.slider-item-width(@item-width){
-  slider[hide-bar]{
+.slider-l-item-width(@item-width){
+  slider-l[hide-bar]{
     overflow: hidden;
   }
 }
 
-.slider-height(@height){
-  slider[height="@{height}"]{
+.slider-l-height(@height){
+  slider-l[height="@{height}"]{
     block-size: @height;
   }
 }
 
-.slider-gap(@gap){
-  slider[gap="@{gap}"]{
+.slider-l-gap(@gap){
+  slider-l[gap="@{gap}"]{
     gap: pow(@harmonic-ratio, @gap)*1rem;
   }
 }
