@@ -63,12 +63,12 @@ LayoutCSS lets you create your layout directly from the html, thanks to custom e
 Thanks to this approach you are giving a real meaning to your html, and it becomes super easy to manage. Just take a look at this piece of code:
 
 ```html
-<sidebar side-width="200px" side="left">
+<sidebar-l side-width="200px" side="left">
     <img src="images/picture1.png">
-    <center max-width="500px">
+    <center-l max-width="500px">
         <p> Welcome to LayoutCSS <p>
-    </center>
-</sidebar>
+    </center-l>
+</sidebar-l>
 ```
 
 But the best way to discover the full potential of LayoutCSS is to try it yourself !
@@ -116,7 +116,7 @@ But the best way to discover the full potential of LayoutCSS is to try it yourse
 ## The Box
 
 ```html
-<box max-width="1000px">...</box>
+<box-l max-width="1000px">...</box-l>
 ```
 
 The box component, is literally a box for you to put some content.
@@ -130,12 +130,12 @@ It allows you to define a max width, and if you do, its width won't depend on th
 In this example, we didn't gave a max-width to the box, so as you can see, the box width is based on its content.
 
 ```html
-  <box>
+  <box-l>
     <p p="1">My parents width is based on my size</p>
-  </box>
-  <box>
+  </box-l>
+  <box-l>
     <p p="1">Mine too</p>
-  </box>
+  </box-l>
 ```
 <img src="/images/box/box-ex-1.png">
 
@@ -144,12 +144,12 @@ In this example, we didn't gave a max-width to the box, so as you can see, the b
 Here we have 2 box with a max-width defined.
 
 ```html
-  <box max-width="300px">
+  <box-l max-width="300px">
     <p p="1">My parents width isn't based on my size</p>
-  </box>
-  <box max-width="500px">
+  </box-l>
+  <box-l max-width="500px">
     <p p="1">Mine either</p>
-  </box>
+  </box-l>
 ```
 
 <img src="images/box/box-ex-2.png">
@@ -159,7 +159,7 @@ Here we have 2 box with a max-width defined.
 ## The Center 
 
 ```html
-<center max-width="1000px" and-text recursive>...</center>
+<center-l max-width="1000px" and-text recursive>...</center-l>
 ```
 
 The center allows you to horizontally center an element.
@@ -177,9 +177,9 @@ Now you just have to use a center component with a specified max-width value to 
 The first example is really simple, here we create a center with a max-width of 500px and as you can see the element is centered and its width is 500px.
 
 ```html
-  <center max-width="300px">
+  <center-l max-width="300px">
     <p p="1">Hello World!</p>
-  </center>
+  </center-l>
 ```
 <img src="images/center/center-ex-1.png">
 
@@ -188,9 +188,9 @@ The first example is really simple, here we create a center with a max-width of 
 Here, the center does not have a max-width attribute, so it takes the width of its content.
 
 ```html
-<center>
+<center-l>
     <p p="1">Hello World!</p>
-</center>
+</center-l>
 ```
 <img src="images/center/center-ex-2.png">
 
@@ -199,9 +199,9 @@ Here, the center does not have a max-width attribute, so it takes the width of i
 If you want your text to be centered as well, just use the and-text attribute. All descendants (children and grand children) will have the same behavior!
 
 ```html
-  <center max-width="300px" and-text>
+  <center-l max-width="300px" and-text>
     <p p="1">Hello World!</p>
-  </center>
+  </center-l>
 ```
 <img src="images/center/center-ex-3.png">
 
@@ -212,20 +212,20 @@ The recursive attribute will center all child elements inside the center! Howeve
 When you use recursive, the center become a flexbox and horizontally center its content.
 
 ```html
-<center max-width="400px" recursive p="1">
+<center-l max-width="400px" recursive p="1">
     <p p="1">Hello World!</p>
     <div p="0">
       <span>Look at me ! I'm not centered.</span>
       <span>But my parent is !</span>
     </div>
-</center>
+</center-l>
 ```
 <img src="images/center/center-ex-4.png">
 
 ## The Ledge
 
 ```html
-<ledge justify="space-between" align="center" gap="3" twin-width> ... </ledge>
+<ledge-l justify="space-between" align="center" gap="3" twin-width> ... </ledge-l>
 ```
 
 The Ledge is a flexbox that allows you to get the elements in a row display.
@@ -245,11 +245,11 @@ The twin-width attribute gives the same width to all the child elements.
 The gap attribute allows you to space elements. If you don't set a gap value, the elements will be side by side. 
 
 ```html
-<ledge p="1" gap="1">
+<ledge-l p="1" gap="1">
   <p p="1">Element 1</p>
   <p p="1">Element 2</p>
   <p p="1">Element 3</p>
-</ledge>
+</ledge-l>
 ```
 <img src="images/ledge/ledge-ex-1.png">
 <hr>
@@ -260,14 +260,14 @@ To manage the vertical alignment, use the align attribute, which is a replacemen
 
 
 ```html
-<ledge p="1" gap="1" justify="center" align="center">
+<ledge-l p="1" gap="1" justify="center" align="center">
   <p p="1">1</p>
   <p p="1">2</p>
   <div p="1">
     <p>Oups...</p>
     <p>Im an higher Element</p>
   </div>
-</ledge>
+</ledge-l>
 ```
 <img src="images/ledge/ledge-ex-2.png">
 <hr>
@@ -275,11 +275,11 @@ To manage the vertical alignment, use the align attribute, which is a replacemen
 The twin-width attribute will give the same width to all Ledge's children. It's very useful when you want different content width elements to be separated evenly.
 
 ```html
-<ledge p="1" gap="1" twin-width>
+<ledge-l p="1" gap="1" twin-width>
   <p p="1">Element 1</p>
   <p p="1">Element 2</p>
   <p p="1">Oups... my content is longer than the others.</p>
-</ledge>
+</ledge-l>
 ```
 <img src="images/ledge/ledge-ex-3.png">
 <hr>
@@ -288,11 +288,11 @@ When the attribute nowrap is defined on a ledge, it will never wrap.
 
 
 ```html
-<ledge p="1" gap="1" nowrap>
+<ledge-l p="1" gap="1" nowrap>
   <p p="1">1</p>
   <p p="1">2</p>
   <p p="1">No matter how long my content is, this ledge will never wrap</p>
-</ledge>
+</ledge-l>
 ```
 <img src="images/ledge/ledge-ex-4.png">
 <hr>
@@ -302,9 +302,9 @@ When the attribute nowrap is defined on a ledge, it will never wrap.
 ## The Rack 
 
 ```html
-<rack min-height="300px" gap="1">
+<rack-l min-height="300px" gap="1">
   <div centered>Element 1</div>
-</rack>
+</rack-l>
 ```
 
 The Rack lets you create an element with a min-height value, you can use it to vertically center one of its child.
@@ -323,9 +323,9 @@ You can define a gap value that will be applied between non centered elements.
 The simplest use of the Rack is to set a min-height and only one element inside. If you remove the centered attribute on its child, you will see that the element is not vertically centered anymore. 
 
 ```html
-<rack min-height="300px" p="1">
+<rack-l min-height="300px" p="1">
   <p p="-1" centered>Element 1</p>
-</rack>
+</rack-l>
 ```
 <img src="images/rack/rack-ex-1.png">
 
@@ -334,13 +334,13 @@ The simplest use of the Rack is to set a min-height and only one element inside.
 In this exemple, you can see how the other elements are displayed around the centered element.
 
 ```html
-<rack min-height="500px" p="1">
+<rack-l min-height="500px" p="1">
   <p p="-1">Element 1</p>
   <p p="-1">Element 2</p>
   <p p="-1" centered>Element 3</p>
   <p p="-1">Element 4</p>
   <p p="-1">Element 5</p>
-</rack>
+</rack-l>
 ```
 <img src="images/rack/rack-ex-2.png">
 
@@ -349,20 +349,20 @@ In this exemple, you can see how the other elements are displayed around the cen
 If you use the height attribute, the Rack will have a fixed height and will be scrollable.
 
 ```html
-<rack height="200px" p="1">
+<rack-l height="200px" p="1">
   <p p="1">Element 1</p>
   <p p="1">Element 2</p>
   <p p="1">Element 3</p>
   <p p="1">Element 4</p>
   <p p="1">Element 5</p>
-</rack>
+</rack-l>
 ```
 <img src="images/rack/rack-ex-3.png">
 
 ## The Stack
 
 ```html
-<stack gap="1">...</stack>
+<stack-l gap="1">...</stack-l>
 ```
 
 The stack allows to vertically space elements. You don't need to set a margin directly to an element anymore. Instead, just create a stack with a gap parameter to space elements inside.
@@ -376,12 +376,12 @@ It space elements from each other, so the first and the last elements touch the 
 Here we just set a gap value on the stack, as you can see the first and last element touch the top/bottom of the stack because the gap only space elements from each other.
 
 ```html
-<stack gap="1">
+<stack-l gap="1">
   <p p="1">1</p>
   <p p="1">2</p>
   <p p="1">3</p>
   <p p="1">4</p>
-</stack>
+</stack-l>
 ```
 
 <img src="images/stack/stack-ex-1.png">
@@ -391,21 +391,21 @@ Here we just set a gap value on the stack, as you can see the first and last ele
 If you set the `recursive` attribute all elements (children and grand children) will be spaced equaly.
 
 ```html
-<stack gap="1" p="1" recursive>
+<stack-l gap="1" p="1" recursive>
   <div p="1">
     <p p="1">a</p>
     <p p="1">b</p>
     <p p="1">c</p>
   </div>
   <p p="1">2</p>
-</stack>
+</stack-l>
 ```
 <img src="images/stack/stack-ex-2.png">
 
 ## The Grid
 
 ```html
-<grid min-cell-width="100px" min-cols="3" max-cols="5" gap="3"> ... </grid>
+<grid-l min-cell-width="100px" min-cols="3" max-cols="5" gap="3"> ... </grid-l>
 ```
 
 The grid component is a responsive grid without breakpoints.
@@ -424,13 +424,13 @@ You can define a `min-cols`/`max-cols` attribute to set a min/max number of colu
 In this simple example, you have a min-cell-width of 150px. So, if the page is resized, the number of columns change to keep the cell width bigger than 150px.
 
 ```html
-<grid min-cell-width="150px">
+<grid-l min-cell-width="150px">
   <img src="/static/images/chocolate.png">
   <img src="/static/images/chocolate.png">
   <img src="/static/images/chocolate.png">
   <img src="/static/images/chocolate.png">
   <img src="/static/images/chocolate.png">
-</grid>
+</grid-l>
 ```
 <img src="images/grid/grid-ex-1.png">
 
@@ -439,13 +439,13 @@ In this simple example, you have a min-cell-width of 150px. So, if the page is r
 Here you have a `gap` value, which space the elements and a `max-cols` value which define the maximum numbers of columns allowed
 
 ```html
-<grid min-cell-width="120px" max-cols="4" gap="2">
+<grid-l min-cell-width="120px" max-cols="4" gap="2">
   <img src="/static/images/chocolate.png">
   <img src="/static/images/chocolate.png">
   <img src="/static/images/chocolate.png">
   <img src="/static/images/chocolate.png">
   <img src="/static/images/chocolate.png">
-</grid>
+</grid-l>
 ```
 <img src="images/grid/grid-ex-2.png">
 
@@ -454,10 +454,10 @@ Here you have a `gap` value, which space the elements and a `max-cols` value whi
 If you want to define a minimum numbers of columns, you just have to set a `min-cols` value. Here, we have only 2 elements, but the grid have 3 columns thanks to the `min-cols` value
 
 ```html
-<grid min-cell-width="150px" min-cols="3" gap="2">
+<grid-l min-cell-width="150px" min-cols="3" gap="2">
   <img src="/static/images/chocolate.png">
   <img src="/static/images/chocolate.png">
-</grid>
+</grid-l>
 ```
 <img src="images/grid/grid-ex-3.png">
 
@@ -466,20 +466,20 @@ If you want to define a minimum numbers of columns, you just have to set a `min-
 You can define `min-cell-width`, `min-cols` and `max-cols` on the same grid. In this example, the grid will never have more than 4 columns and never less than 2 columns. 
 
 ```html
-<grid min-cell-width="150px" min-cols="2" max-cols="4" gap="2">
+<grid-l min-cell-width="150px" min-cols="2" max-cols="4" gap="2">
   <img src="/static/images/chocolate.png">
   <img src="/static/images/chocolate.png">
   <img src="/static/images/chocolate.png">
   <img src="/static/images/chocolate.png">
   <img src="/static/images/chocolate.png">
-</grid>
+</grid-l>
 ```
 <img src="images/grid/grid-ex-4.png">
 
 ## The Slider
 
 ```html
-<slider item-width="200px" height="200px" gap="2" hide-bar>... </slider>
+<slider-l item-width="200px" height="200px" gap="2" hide-bar>... </slider-l>
 ```
 
 The Slider is a component that lets you define a fixed height and width to elements that will be placed inline. Therefore you can easily create a carrousel for your pictures.
@@ -494,14 +494,14 @@ The Slider is a component that lets you define a fixed height and width to eleme
 Here we defined the slider's height at 200px and item-width at 250px. 
 
 ```html
-<slider height="250px" item-width="200px">
+<slider-l height="250px" item-width="200px">
   <img src="/static/images/notre-dame.jpg">
   <img src="/static/images/notre-dame.jpg">
   <img src="/static/images/notre-dame.jpg">
   <img src="/static/images/notre-dame.jpg">
   <img src="/static/images/notre-dame.jpg">
   <img src="/static/images/notre-dame.jpg">
-</slider>
+</slider-l>
 ```
 
 <img src="images/slider/slider-ex-1.png">
@@ -511,14 +511,14 @@ Here we defined the slider's height at 200px and item-width at 250px.
 In this example we set a item-width value in percentage, in this case each element take 25% of the visible width. We use a gap set to 1 to space elements between them.
 
 ```html
-<slider height="250px" item-width="25%" gap="1">
+<slider-l height="250px" item-width="25%" gap="1">
   <img src="/static/images/notre-dame.jpg">
   <img src="/static/images/notre-dame.jpg">
   <img src="/static/images/notre-dame.jpg">
   <img src="/static/images/notre-dame.jpg">
   <img src="/static/images/notre-dame.jpg">
   <img src="/static/images/notre-dame.jpg">
-</slider>
+</slider-l>
 ```
 
 <img src="images/slider/slider-ex-2.png">
@@ -528,14 +528,14 @@ In this example we set a item-width value in percentage, in this case each eleme
 If you add the attribute `hide-bar` you can see that the scroll bar is not visible anymore. It can be usefull if you want to create a carousel with left and right arrow as the only way to navigate between elements.
 
 ```html
-<slider height="250px" item-width="200px" gap="2" hide-bar>
+<slider-l height="250px" item-width="200px" gap="2" hide-bar>
   <img src="/static/images/notre-dame.jpg">
   <img src="/static/images/notre-dame.jpg">
   <img src="/static/images/notre-dame.jpg">
   <img src="/static/images/notre-dame.jpg">
   <img src="/static/images/notre-dame.jpg">
   <img src="/static/images/notre-dame.jpg">
-</slider>
+</slider-l>
 ```
 
 <img src="images/slider/slider-ex-3.png">
@@ -544,7 +544,7 @@ If you add the attribute `hide-bar` you can see that the scroll bar is not visib
 ## The Switcher 
 
 ```html
-<switcher threshold="250px" gap="3"> ... </switcher>
+<switcher-l threshold="250px" gap="3"> ... </switcher-l>
 ```
 
 The switcher is a flexbox which display its elements in a row and at a specific width its layout change from row to column.
@@ -561,10 +561,10 @@ You don't have to use any media queries and the breakpoint is not based on the s
 In this example, when the switcher width is smaller then 500px, its layout switch from row to column. 
 
 ```html
-<switcher threshold="500px" gap="1" p="1">
+<switcher-l threshold="500px" gap="1" p="1">
   <p p="1">element 1</p>
   <p p="1">element 2</p>
-</switcher>
+</switcher-l>
 ```
 
 <img src="images/switcher/switcher-ex-1.png">
@@ -574,11 +574,11 @@ In this example, when the switcher width is smaller then 500px, its layout switc
 Here you see that we have fixed a limit to only 2 elements, therefore, because we have 3 elements, the switcher is switched.
 
 ```html
-<switcher threshold="500px" gap="1" limit="2">
+<switcher-l threshold="500px" gap="1" limit="2">
   <p p="1">element 1</p>
   <p p="1">element 2</p>
   <p p="1">element 3</p>
-</switcher>
+</switcher-l>
 ```
 
 <img src="images/switcher/switcher-ex-6.png">
@@ -586,7 +586,7 @@ Here you see that we have fixed a limit to only 2 elements, therefore, because w
 ## The Outsider
 
 ```html
-<outsider position="absolute" top="20px" right="10%">... </outsider>
+<outsider-l position="absolute" top="20px" right="10%">... </outsider-l>
 ```
 
 The Outsider, is very usefull to build absolute positionning.
@@ -604,16 +604,16 @@ You can give it any position attribute (absolute, fixed, sticky, relative) and t
 A simple example to show you how to set an element in the right top corner of its parent with the Outsider:
 
 ```html
-<stack gap="1" relative>
-  <outsider position="absolute" right="0px" top="0px">
+<stack-l gap="1" relative>
+  <outsider-l position="absolute" right="0px" top="0px">
     <p p="1">1</p>
-  </outsider>
+  </outsider-l>
   <p>Hello</p>
   <p>Hello</p>
   <p>Hello</p>
   <p>Hello</p>
   <p>Hello</p>
-</stack>
+</stack-l>
 ```
 <img src="images/outsider/outsider-ex-1.png">
 
@@ -622,14 +622,14 @@ A simple example to show you how to set an element in the right top corner of it
 Here, the Outsider is sticky, it sticks to the top of its relative parent.
 
 ```html
-<rack min-height="150vh" relative>
-  <outsider position="sticky" top="80px" p="-2">
+<rack-l min-height="150vh" relative>
+  <outsider-l position="sticky" top="80px" p="-2">
     <p>1</p>
-  </outsider>
+  </outsider-l>
   <p>Hello</p>
   <p>Hello</p>
   <p>Hello</p>
-</rack>
+</rack-l>
 ```
 
 <img src="images/outsider/outsider-ex-2.png">
@@ -637,7 +637,7 @@ Here, the Outsider is sticky, it sticks to the top of its relative parent.
 ## The Extender
 
 ```html
-<extender screen keep-center>... </extender>
+<extender-l screen keep-center>... </extender-l>
 ```
 
 The extender allows you to define an element to be wider than its parent.
@@ -657,7 +657,7 @@ Normally, you had to add the padding on each element, but with the extender, onl
 <div p="3">
   <p>Hello</p>
   <p>Hello</p>
-  <extender ratio="16/4" bg-img="/static/images/notre-dame.jpg"></extender>
+  <extender-l ratio="16/4" bg-img="/static/images/notre-dame.jpg"></extender-l>
   <p>Hello</p>
   <p>Hello</p>
 </div>
@@ -677,9 +677,9 @@ This way, you can keep your flow and show a full screen width element without le
 <div p="1">
   <p>Hello</p>
   <p>Hello</p>
-  <extender screen>
+  <extender-l screen>
     <p>Oh ! I take full screen width.</p>
-  </extender>
+  </extender-l>
   <p>Hello</p>
   <p>Hello</p>
 </div>
@@ -691,7 +691,7 @@ This way, you can keep your flow and show a full screen width element without le
 ## The Sidebar
 
 ```html
-<sidebar side="right" side-width="300px" content-min="60%" gap="2" shrink> ... </sidebar>
+<sidebar-l side="right" side-width="300px" content-min="60%" gap="2" shrink> ... </sidebar-l>
 ```
 
 The Sidebar is a flexbox that give a fixed width to one of its children, and the space left to the other child. By default, the Sidebar switch to a vertical layout when the content Element's (the children that is not the sidebar) width is equal to 50% of the Sidebar component.
@@ -710,14 +710,14 @@ The first thing to do is to define the side of the sidebar.
 If you want the sidebar on the left, you add `side="left"`.
 
 ```html
-<sidebar side="left" p="0">
+<sidebar-l side="left" p="0">
   <div p="1">
     <p>sidebar</p>
   </div>
   <div p="1">
     <p>content</p>
   </div>
-</sidebar>
+</sidebar-l>
 ```
 
 <img src="images/sidebar/sidebar-ex-1.png">
@@ -727,14 +727,14 @@ If you want the sidebar on the left, you add `side="left"`.
 If you want the sidebar on the right, you add `side="right"`.
 
 ```html
-<sidebar side="right" p="0">
+<sidebar-l side="right" p="0">
   <div p="1">
     <p>content</p>
   </div>
   <div p="1">
     <p>sidebar</p>
   </div>
-</sidebar>
+</sidebar-l>
 ```
 <img src="images/sidebar/sidebar-ex-2.png">
 <hr>
@@ -742,14 +742,14 @@ If you want the sidebar on the right, you add `side="right"`.
 You can define the width of the sidebar with `side-width`. (It gives a width to the side element only, not the content element).
 
 ```html
-<sidebar side-width="240px" side="left" p="0">
+<sidebar-l side-width="240px" side="left" p="0">
   <div p="1">
     <p>sidebar</p>
   </div>
   <div p="1">
     <p>content</p>
   </div>
-</sidebar>
+</sidebar-l>
 ```
 
 <img src="images/sidebar/sidebar-ex-3.png">
@@ -759,14 +759,14 @@ You can define the width of the sidebar with `side-width`. (It gives a width to 
  With `content-min`, you can define when the sidebar should wrap. If you set `content-min` to 60%, it means that when the content element's width will be smaller than 60% of the component, the sidebar will wrap. 
 
  ```html
- <sidebar content-min="60%" side="left" p="0">
+ <sidebar-l content-min="60%" side="left" p="0">
   <div p="1">
     <p>sidebar</p>
   </div>
   <div p="1">
     <p>content</p>
   </div>
-</sidebar>
+</sidebar-l>
  ```
 
  <img src="images/sidebar/sidebar-ex-4.png">
@@ -776,14 +776,14 @@ You can define the width of the sidebar with `side-width`. (It gives a width to 
  If you want elements inside the Sidebar to take the height of their content you just have to add the `shrink` attribute.
 
  ```html
- <sidebar side-width="240px" shrink side="left" p="0">
+ <sidebar-l side-width="240px" shrink side="left" p="0">
   <div p="1">
     <p>sidebar</p>
   </div>
   <div p="1">
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
   </div>
-</sidebar>
+</sidebar-l>
  ```
 
  <img src="images/sidebar/sidebar-ex-5.png">
@@ -793,14 +793,14 @@ You can define the width of the sidebar with `side-width`. (It gives a width to 
  The reverse attribute, lets you wrap the content the other way around. When wrapped, the content will be on top and the sidebar on bottom.
 
  ```html
- <sidebar reverse side-width="240px" side="left" p="0">
+ <sidebar-l reverse side-width="240px" side="left" p="0">
   <div p="1">
     <p>sidebar</p>
   </div>
   <div p="1">
     <p>content</p>
   </div>
-</sidebar>
+</sidebar-l>
  ```
 
  <img src="images/sidebar/sidebar-ex-6.png">
@@ -810,14 +810,14 @@ You can define the width of the sidebar with `side-width`. (It gives a width to 
  One last thing, if you want to space the elements inside the Sidebar just use the `gap` attribute.
 
  ```html
- <sidebar gap="1" side="left" p="0">
+ <sidebar-l gap="1" side="left" p="0">
   <div p="1">
     <p>sidebar</p>
   </div>
   <div p="1">
     <p>content</p>
   </div>
-</sidebar>
+</sidebar-l>
  ```
 
  <img src="images/sidebar/sidebar-ex-7.png">
@@ -827,7 +827,7 @@ You can define the width of the sidebar with `side-width`. (It gives a width to 
 ## The Icon 
 
 ```html
-<h1><icon scale="1.3">... </icon> I'm the title</h1>
+<h1><icon-l scale="1.3">... </icon-l> I'm the title</h1>
 ```
 
 The Icon's purpose, is to give to an element the height of the text in which it is.
@@ -846,7 +846,7 @@ As you can see, the icon is the same size than the text.
 
 ```html
 <h3>
-  <icon> <img src="/static/images/icon.svg"> </icon>
+  <icon-l> <img src="/static/images/icon.svg"> </icon-l>
   The icon is the same size as text !
 </h3>
 ```
@@ -858,16 +858,16 @@ As you can see, the icon is the same size than the text.
 Sometimes, you want the icon to be bigger or smaller than the text, to do so, you just have to define a `scale` attribute.
 
 ```html
-<stack gap="1">
+<stack-l gap="1">
   <h3>
-    <icon scale="0.7"> <img src="/static/images/icon.svg"> </icon>
+    <icon-l scale="0.7"> <img src="/static/images/icon.svg"> </icon-l>
     The icon is smaller than text !
   </h3>
   <h3>
-    <icon scale="1.5"> <img src="/static/images/icon.svg"> </icon>
+    <icon-l scale="1.5"> <img src="/static/images/icon.svg"> </icon-l>
     The icon is bigger than text !
   </h3>
-</stack>
+</stack-l>
 ```
 
 <img src="images/icon/icon-ex-2.png">
@@ -879,21 +879,21 @@ If you want a gap between the icon and the text, just define a `gap` value. It w
 If you want the gap to be only directed to the begining or the end of the sentece define a gap-dir at "end" or "start".
 
 ```html
-<stack gap="1">
+<stack-l gap="1">
   <h3>
     Like
-    <icon gap="2" gap-dir="start"> <img src="/static/images/heart.png"> </icon>
+    <icon-l gap="2" gap-dir="start"> <img src="/static/images/heart.png"> </icon-l>
   </h3>
   <h3>
-    <icon gap="2" gap-dir="end"> <img src="/static/images/heart.png"> </icon>
+    <icon-l gap="2" gap-dir="end"> <img src="/static/images/heart.png"> </icon-l>
     Like
   </h3>
   <h3>
     Like
-    <icon gap="2"> <img src="/static/images/heart.png"> </icon>
+    <icon-l gap="2"> <img src="/static/images/heart.png"> </icon-l>
     Like
   </h3>
-</stack>
+</stack-l>
 ```
 
 <img src="images/icon/icon-ex-3.png">
@@ -1010,11 +1010,11 @@ The `flex-basis` is used as a normal flex basis value.
 Flex-basis defines the default size of an element before the remaining space is distributed.
 
 ```html
-<ledge align="center" justify="space-around" p="0" gap="1">
+<ledge-l align="center" justify="space-around" p="0" gap="1">
   <p flex-basis="300px">Element 1</p>
   <p>Element 2</p>
   <p>Element 3</p>
-</ledge>
+</ledge-l>
 ```
 <img src="images/flex/flex-ex-1.png">
 The `flex-grow` is used as a normal flex grow value.
@@ -1022,11 +1022,11 @@ The `flex-grow` is used as a normal flex grow value.
 Flex-grow defines the ability for a flex item to grow if necessary. 
 
 ```html
-<ledge align="center" justify="space-around" p="0" gap="1">
+<ledge-l align="center" justify="space-around" p="0" gap="1">
   <p>Element 1</p>
   <p flex-grow="1">Element 2</p>
   <p flex-grow="2">Element 3</p>
-</ledge>
+</ledge-l>
 ```
 <img src="images/flex/flex-ex-2.png">
 The `flex-shrink` is used as a normal flex shrink value.
@@ -1034,22 +1034,22 @@ The `flex-shrink` is used as a normal flex shrink value.
 Flex-shrink defines the ability for a flex item to shrink if necessary.
 
 ```html
-<ledge align="center" justify="space-around" p="0" gap="1" nowrap>
+<ledge-l align="center" justify="space-around" p="0" gap="1" nowrap>
   <p>Element Lorem ipsum dolor sit </p>
   <p>Element Lorem ipsum dolor sit </p>
   <p flex-shrink="2">Element Lorem ipsum dolor sit </p>
-</ledge>
+</ledge-l>
 ```
 <img src="images/flex/flex-ex-3.png">
 
 The `align-self` allows the default alignment (or the one specified by align-items) to be overridden for individual flex items.
 
 ```html
-<ledge align="center" justify="space-around" p="0" gap="1" nowrap>
+<ledge-l align="center" justify="space-around" p="0" gap="1" nowrap>
   <p align-self="start">Element Lorem ipsum dolor sit </p>
   <p align-self="end">Element Lorem ipsum dolor sit </p>
   <p p="1">Element Lorem ipsum dolor sit </p>
-</ledge>
+</ledge-l>
 ```
 <img src="images/flex/flex-ex-4.png">
 
@@ -1087,11 +1087,11 @@ Just like the rest of the framework, those values are based on your harmonic rat
 The value 0 is the size of the base value, the value 1 is equal to the size of a 'h3', the value 2 is equal to a 'h2', and so on.
 
 ```html
-<stack gap="1">
+<stack-l gap="1">
   <p font-size="3">Hello World!</p>
   <p font-size="2">Hello World!</p>
   <p font-size="1">Hello World!</p>
-</stack>
+</stack-l>
 ```
 <img src="images/font-size/font-ex.png">
 
@@ -1107,9 +1107,9 @@ It's really usefull when you're creating an outsider, and you want to position i
 
 ```html
 <div relative p="4">
-  <outsider-n position="absolute" top="20px" right="100px">
+  <outsider-l-n position="absolute" top="20px" right="100px">
     <p p="1">Hello guys !</p>
-  </outsider-n>
+  </outsider-l-n>
 </div>
 ```
 <img src="images/relative/relative-ex.png">
@@ -1125,12 +1125,12 @@ It let you define the layer position of an element.
 
 ```html
 <div relative>
-  <outsider-n position="absolute" z-index="10" top="20px" right="100px">
+  <outsider-l-n position="absolute" z-index="10" top="20px" right="100px">
     <p p="1">I'm on top !</p>
-  </outsider-n>
-  <outsider-n position="relative" z-index="5">
+  </outsider-l-n>
+  <outsider-l-n position="relative" z-index="5">
     <p p="2">I'm on bottom !</p>
-  </outsider-n>
+  </outsider-l-n>
 </div>
 ```
 <img src="images/z-index/zindex-ex.png">
