@@ -2,47 +2,48 @@ let htmlparser2 = require("htmlparser2");
 let generateMixins = require("./mixin-sniffer")
 
 test("component with group but no parameter in this group will call the mixin without parameters ", () => {
-  let tag = "<grid ></grid>";
+  let tag = "<grid-l></grid-l>";
   let cssSet = generateMixins(tag);
   let expectedResult = new Set();
-  expectedResult.add(".grid();");
-  expectedResult.add(".grid-group();");
+  expectedResult.add(".grid-l();");
+  expectedResult.add(".grid-l-group();");
   expect(cssSet).toEqual(expectedResult);
 });
 
 test("component with group and other parameter call both mixin", () => {
-  let tag = '<grid gap="2" min-cols="3" ></grid>';
+  let tag = '<grid-l gap="2" min-cols="3" ></grid-l>';
   let cssSet = generateMixins(tag);
   let expectedResult = new Set();
-  expectedResult.add(".grid();");
-  expectedResult.add(".grid-gap(@gap:2);");
-  expectedResult.add(".grid-group(@min-cols:3,@gap:2);");
+  expectedResult.add(".grid-l();");
+  expectedResult.add(".grid-l-gap(@gap:2);");
+  expectedResult.add(".grid-l-group(@min-cols:3,@gap:2);");
   expect(cssSet).toEqual(expectedResult);
 });
 
 test("component with parameters without value call its mixin with empty parameters ", () => {
-  let tag = "<sidebar reverse></slider>";
+  let tag = "<sidebar-l reverse></slider-l>";
   let cssSet = generateMixins(tag);
   let expectedResult = new Set();
-  expectedResult.add(".sidebar();");
-  expectedResult.add(".sidebar-reverse();");
+  expectedResult.add(".sidebar-l();");
+  expectedResult.add(".sidebar-l-group();");
+  expectedResult.add(".sidebar-l-reverse();");
   expect(cssSet).toEqual(expectedResult);
 });
 
 test("component without parameters should call its mixin empty ", () => {
-  let tag = "<box></box>";
+  let tag = "<box-l></box-l>";
   let cssSet = generateMixins(tag);
   let expectedResult = new Set();
-  expectedResult.add(".box();");
+  expectedResult.add(".box-l();");
   expect(cssSet).toEqual(expectedResult);
 });
 
 test("component with parameter should call its mixin empty and its mixin with parameter ", () => {
-  let tag = '<box max-width="100px" class="hello"></box>';
+  let tag = '<box-l max-width="100px" class="hello"></box-l>';
   let cssSet = generateMixins(tag);
   let expectedResult = new Set();
-  expectedResult.add(".box();");
-  expectedResult.add(".box-max-width(@max-width:100px);");
+  expectedResult.add(".box-l();");
+  expectedResult.add(".box-l-max-width(@max-width:100px);");
   expect(cssSet).toEqual(expectedResult);
 });
 
