@@ -25,8 +25,8 @@
 }
 
 .slider-l-item-width(@item-width){
-  slider-l[hide-bar]{
-    overflow: hidden;
+  slider-l[item-width="@{item-width}"] > *{
+    flex-basis: @item-width;
   }
 }
 
