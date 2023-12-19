@@ -1,0 +1,49 @@
+.p-child(@value){
+  [p-child="@{value}"]> *{
+    padding: pow(@harmonic-ratio, @value)*1rem;
+    --pl: $padding;
+    --pr: $padding;
+  }
+}
+
+.pt-child(@value){
+  [pt-child="@{value}"]> *{
+    padding-top: pow(@harmonic-ratio, @value)*1rem;
+  }
+}
+
+.pb-child(@value){
+  [pb-child="@{value}"]> *{
+    padding-bottom: pow(@harmonic-ratio, @value)*1rem;
+  }
+}
+
+.pl-child(@value){
+  [pl-child="@{value}"]> *{
+    padding-left: pow(@harmonic-ratio, @value)*1rem;
+    --pl: $padding-left;
+  }
+}
+
+.pr-child(@value){
+  [pr-child="@{value}"]> *{
+    padding-right: pow(@harmonic-ratio, @value)*1rem;
+    --pr: $padding-right;
+  }
+}
+
+.px-child(@value){
+  [px-child="@{value}"]> *{
+    padding-left: pow(@harmonic-ratio, @value)*1rem;
+    padding-right: $padding-left;
+    --pl: $padding-left;
+    --pr: $padding-right;
+  }
+}
+
+.py-child(@value){
+  [py-child="@{value}"]> *{
+    padding-top: pow(@harmonic-ratio, @value)*1rem;
+    padding-bottom: $padding-top;
+  }
+}
