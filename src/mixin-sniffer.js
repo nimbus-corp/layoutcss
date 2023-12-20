@@ -49,7 +49,7 @@ const components = {
     "params": ["max-width", "and-text", "recursive"],
   },
   "extender-l": {
-    "params": ["screen"],
+    "params": ["screen", "keep-center", "keep-p", "keep-pl", "keep-pr"],
   },
   "grid-l": {
     "params": ["gap"],

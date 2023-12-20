@@ -17,3 +17,31 @@
     right: 50%;
   }
 }
+
+.extender-l-keep-center(){
+  extender-l[keep-center] > *{
+    box-sizing: content-box;
+    max-inline-size: var(--center-max-width);
+    margin-inline: auto;
+  }
+}
+
+.extender-l-keep-p(){
+  extender-l[keep-p] {
+    padding-right: var(--pr);
+    padding-left: var(--pl);
+  }
+}
+
+.extender-l-keep-pl(){
+  extender-l[keep-pl] {
+    padding-left: var(--pl);
+  }
+}
+
+.extender-l-keep-pr(){
+  extender-l[keep-pr] {
+    padding-right: var(--pr);
+  }
+}
+
