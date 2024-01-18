@@ -98,10 +98,10 @@ But the best way to discover the full potential of LayoutCSS is to try it yourse
 
 * [Utilities](#utilities)
     * [bg-img](#bg-img)
+    * [ratio](#ratio)
     * [p](#p)
     * [p-recursive](#p-recursive)
     * [p-child](#p-child)
-    * [ratio](#ratio)
     * [flex](#flex-utilities)
     * [hide-under](#hide-under)
     * [hide-over](#hide-over)
@@ -640,7 +640,7 @@ Here, the Outsider is sticky, it sticks to the top of its relative parent.
 ## The Extender
 
 ```html
-<extender-l screen keep-center>... </extender-l>
+<extender-l screen keep-center keep-p>... </extender-l>
 ```
 
 The extender allows you to define an element to be wider than its parent.
@@ -650,6 +650,8 @@ It's very useful when you want for an element to take the width of its parent wi
 Or sometimes, you just need for an element to take the screen width and for it to stay in the flow of its parent.
 
 -   screen: if you want the element to take the full screen width
+-   keep-center: the children elements of the extender will respect the center.
+-   keep-p: the children elements of the extender will have the padding inherited from the center. (you caan also use keep-pl or keep-pr to only keep the right or left padding).
 
 ### Examples
 Here, the red div has a padding, but the extender will take full width of it beyond the padding.
@@ -1029,6 +1031,7 @@ You can use the following p-recursive attributes :
 ```
 
 <img src="images/p-recursive/padding-r2.png">
+
 ```html
 <div pl-recursive="1">
     <p>Hey</p>
@@ -1038,6 +1041,7 @@ You can use the following p-recursive attributes :
     </div>
 </div>
 ```
+
 <img src="images/p-recursive/padding-r1.png">
 
 ## P-child
