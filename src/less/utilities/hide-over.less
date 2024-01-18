@@ -1,5 +1,7 @@
 .hide-over(@value){
   @media screen and (min-width: @value) {
-    display:none;
+    [hide-over='@{value}']{
+      display:none;
+    }
   }
 }

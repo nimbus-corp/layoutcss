@@ -993,6 +993,94 @@ You can use the following p attributes :
 ```
 <img src="images/p/p-ex-4.png">
 
+## P-recursive
+
+```html
+<div p-recursive="3">...</div>
+```
+
+The p-recursive utility lets you define a padding on all the descendants (children, grand-children, grand-grand-children etc.).
+
+Just like the utility p, you can choose the kind of padding, so if you set `px-recusive="3"` all the descendants of the element will receive an horizontal padding of 3.
+
+You can use the following p-recursive attributes :
+
+- p-recursive: define a padding in every direction
+- px-recursive: define an horizontal padding
+- py-recursive: define vertical padding
+- pt-recursive: define padding-top
+- pb-recursive: define padding-bottom
+- pl-recursive: define padding-left
+- pr-recursive: define padding-right
+
+### Examples 
+
+```html
+<div p-recursive="1">
+    <p>Hey</p>
+    <p>Guys !</p>
+    <div>
+        <p>I also inherit of the padding</p>
+    </div>
+</div>
+```
+
+<img src="images/p-recursive/padding-r2.png">
+```html
+<div pl-recursive="1">
+    <p>Hey</p>
+    <p>Guys !</p>
+    <div>
+        <p>I also inherit of the left padding</p>
+    </div>
+</div>
+```
+<img src="images/p-recursive/padding-r1.png">
+
+## P-child
+
+```html
+<div p-child="3">...</div>
+```
+
+The p-child utility lets you define a padding on all the children of the element.
+
+Just like the utility p, you can choose the kind of padding, so if you set `px-child="3"` all the children of the element will receive an horizontal padding of 3.
+
+You can use the following p-child attributes :
+
+- p-child: define a padding in every direction
+- px-child: define an horizontal padding
+- py-child: define vertical padding
+- pt-child: define padding-top
+- pb-child: define padding-bottom
+- pl-child: define padding-left
+- pr-child: define padding-right
+
+### Examples 
+
+```html
+<div p-child="1">
+    <p>Hey</p>
+    <p>Guys !</p>
+    <div>
+        <p>I dont inherit of the padding</p>
+    </div>
+</div>
+```
+<img src="images/p-child/padding-c1.png">
+
+```html
+<div pl-child="1">
+    <p>Hey</p>
+    <p>Guys !</p>
+    <div>
+        <p>I dont inherit of the left padding</p>
+    </div>
+</div>
+```
+<img src="images/p-child/padding-c2.png">
+
 ## Flex Utilities
 
 ```html
@@ -1053,26 +1141,43 @@ The `align-self` allows the default alignment (or the one specified by align-ite
 ```
 <img src="images/flex/flex-ex-4.png">
 
-## Hide
+## Hide-under
 
 ```html
-<div hide="100px..1200px">...</div>
+<div hide-under="200px">...</div>
 ```
 
-The hide utility lets you hide an element based on the screen size. 
-Its value defines the interval in which the element will be hidden. 
+The hide-under utility lets you define on breakpoint, based on the screen width, under which the element while be hidden.
 
-If you want the element to be hidden when the screen's width is smaller then 500px you would write: 
+### Example
 
 ```html
-<div hide="..500px"></div>
+<div hide-under="1200px">
+    <p>You can see me !</p>
+</div>
 ```
+<img src="images/hide-under/hide-under1.png">
 
-And if you want to hide an element when the screen width is bigger then 1000px you would write:
+<img src="images/hide-under/hide-under2.png">
+
+
+## hide-over
 
 ```html
-<div hide="1000px.."></div>
+<div hide-under="200px">...</div>
 ```
+
+The hide-over utility lets you define on breakpoint, based on the screen width, above which the element while be hidden.
+
+### Example
+
+```html
+<div hide-over="1200px">
+    <p>You can see me !</p>
+</div>
+```
+<img src="images/hide-over/hide-over1.png">
+<img src="images/hide-over/hide-over2.png">
 
 ## Font-size
 
