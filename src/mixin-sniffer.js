@@ -161,7 +161,7 @@ function generateMixins(text) {
                 if (isComponent) {
                     // we call the empty mixin for the component
                     mixinSet.add(`.${tagName}();`);
-                    groupsBreakpoints = {};
+                    let groupsBreakpoints = {};
 
                     // if the component has a group we process it here
                     if (components[tagName]["group"]) {
