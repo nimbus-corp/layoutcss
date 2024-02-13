@@ -12,15 +12,15 @@
 }
 
 .icon-l-scale(@scale){
-  icon-l[scale="@{scale}"] >:nth-child(1){
+  icon-l[layout*="scale:@{scale}"] >:nth-child(1){
     height: @scale*1rem;
   }
 }
 
 .icon-l-group(@gap:null, @gap-dir:start){
-@gap-dir-selector: if((@gap-dir=end),e('[gap-dir="end"]'),);
+@gap-dir-selector: if((@gap-dir=end),e('[layout*="gap-dir:end"]'),);
 @opposite-dir: if((@gap-dir=start),end,start);
-  icon@{gap-dir-selector}[gap="@{gap}"] >:nth-child(1) when (isnumber(@gap)) {
+  icon@{gap-dir-selector}[layout*="gap:@{gap}"] >:nth-child(1) when (isnumber(@gap)) {
     margin-inline-@{gap-dir}: pow(@harmonic-ratio, @gap)*1rem;
     margin-inline-@{opposite-dir}: initial;
   }

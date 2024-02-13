@@ -1,0 +1,19 @@
+
+.area-l(){
+    area-l{
+        display: grid;
+    }
+}
+
+.area-l-layout(@layout){
+    area-l[layout="@{layout}"]{
+        grid-template-areas: rows(@layout);
+    }
+    each(single_values(@layout), {
+        @position: replace(@value, 'a', '');
+        area-l[layout="@{layout}"] > :nth-child(@{position}){
+            grid-area: @value ;
+        }
+    })
+}
+

@@ -11,13 +11,13 @@
 }
 
 .switcher-l-threshold(@threshold){
-  switcher-l[threshold="@{threshold}"] > * {
+  switcher-l[layout*="threshold:@{threshold}"] > * {
     flex-basis: calc((@threshold - 100%) * 999);
   }
 }
 
 .switcher-l-limit(@limit){
-  switcher-l[limit="@{limit}"] {
+  switcher-l[layout*="limit:@{limit}"] {
     & > :nth-last-child(n+@{limit}), & > :nth-last-child(n+@{limit}) ~ * {
       flex-basis: 100%;
     }
@@ -25,13 +25,13 @@
 }
 
 .switcher-l-gap(@gap){
-  switcher-l[gap="@{gap}"]{
+  switcher-l[layout*="gap:@{gap}"]{
     gap: pow(@harmonic-ratio, @gap)*1rem;
   }
 }
 
 .switcher-l-reverse(){
-  switcher-l[reverse]{
+  switcher-l[layout*="reverse"]{
     flex-wrap: wrap-reverse;
   }
 }

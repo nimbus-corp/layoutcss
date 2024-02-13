@@ -19,25 +19,25 @@
 }
 
 .slider-l-hide-bar(){
-  slider-l[hide-bar]{
+  slider-l[layout*="hide-bar"]{
     overflow: hidden;
   }
 }
 
 .slider-l-item-width(@item-width){
-  slider-l[item-width="@{item-width}"] > *{
+  slider-l[layout*="item-width:@{item-width}"] > *{
     flex-basis: @item-width;
   }
 }
 
 .slider-l-height(@height){
-  slider-l[height="@{height}"]{
+  slider-l[layout*="height:@{height}"]{
     block-size: @height;
   }
 }
 
 .slider-l-gap(@gap){
-  slider-l[gap="@{gap}"]{
+  slider-l[layout*="gap:@{gap}"]{
     gap: pow(@harmonic-ratio, @gap)*1rem;
   }
 }

@@ -3,15 +3,15 @@
     display:flex;
     flex-direction:column;
 
-    & > [centered]{
+    & > [layout*="centered"]{
       margin-block: auto;
     }
 
-    & > :first-child:not([centered]) {
+    & > :first-child:not([layout*="centered"]) {
       margin-block-start: 0;
     }
 
-    & > :last-child:not([centered]) {
+    & > :last-child:not([layout*="centered"]) {
       margin-block-end: 0;
     }
 
@@ -19,20 +19,26 @@
 }
 
 .rack-l-height(@height){
-  rack-l[height="@{height}"]{
+  rack-l[layout*="height:@{height}"]{
     height: @height;
     overflow-y: scroll;
   }
 }
 
 .rack-l-min-height(@min-height){
-  rack-l[min-height="@{min-height}"]{
+  rack-l[layout*="min-heigh:@{min-height}"]{
     min-height: @min-height;
   }
 }
 
+.rack-l-max-height(@max-height){
+  rack-l[layout*="max-height:@{max-height}"]{
+    max-height: @max-height;
+  }
+}
+
 .rack-l-gap(@gap){
-  rack[gap="@{gap}"]{
+  rack[layout*="gap:@{gap}"]{
     gap: pow(@harmonic-ratio, @gap)*1rem;
   }
 }

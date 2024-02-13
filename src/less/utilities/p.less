@@ -1,5 +1,5 @@
 .p(@value){
-  [p="@{value}"]{
+  [layout*="p:@{value}"]{
     padding: pow(@harmonic-ratio, @value)*1rem;
     --pl: $padding;
     --pr: $padding;
@@ -7,33 +7,33 @@
 }
 
 .pt(@value){
-  [pt="@{value}"]{
+  [layout*="pt:@{value}"]{
     padding-top: pow(@harmonic-ratio, @value)*1rem;
   }
 }
 
 .pb(@value){
-  [pb="@{value}"]{
+  [layout*="pb:@{value}"]{
     padding-bottom: pow(@harmonic-ratio, @value)*1rem;
   }
 }
 
 .pl(@value){
-  [pl="@{value}"]{
+  [layout*="pl:@{value}"]{
     padding-left: pow(@harmonic-ratio, @value)*1rem;
     --pl: $padding-left;
   }
 }
 
 .pr(@value){
-  [pr="@{value}"]{
+  [layout*="pr:@{value}"]{
     padding-right: pow(@harmonic-ratio, @value)*1rem;
     --pr: $padding-right;
   }
 }
 
 .px(@value){
-  [px="@{value}"]{
+  [layout*="px:@{value}"]{
     padding-left: pow(@harmonic-ratio, @value)*1rem;
     padding-right: $padding-left;
     --pl: $padding-left;
@@ -42,7 +42,7 @@
 }
 
 .py(@value){
-  [py="@{value}"]{
+  [layout*="py:@{value}"]{
     padding-top: pow(@harmonic-ratio, @value)*1rem;
     padding-bottom: $padding-top;
   }

@@ -1,5 +1,5 @@
 .p-recursive(@value){
-  [p-recursive="@{value}"] *{
+  [layout*="p-recursive:@{value}"] *{
     padding: pow(@harmonic-ratio, @value)*1rem;
     --pl: $padding;
     --pr: $padding;
@@ -7,33 +7,33 @@
 }
 
 .pt-recursive(@value){
-  [pt-recursive="@{value}"] *{
+  [layout*="pt-recursive:@{value}"] *{
     padding-top: pow(@harmonic-ratio, @value)*1rem;
   }
 }
 
 .pb-recursive(@value){
-  [pb-recursive="@{value}"] *{
+  [layout*="pb-recursive:@{value}"] *{
     padding-bottom: pow(@harmonic-ratio, @value)*1rem;
   }
 }
 
 .pl-recursive(@value){
-  [pl-recursive="@{value}"] *{
+  [layout*="pl-recursive:@{value}"] *{
     padding-left: pow(@harmonic-ratio, @value)*1rem;
     --pl: $padding-left;
   }
 }
 
 .pr-recursive(@value){
-  [pr-recursive="@{value}"] *{
+  [layout*="pr-recursive:@{value}"] *{
     padding-right: pow(@harmonic-ratio, @value)*1rem;
     --pr: $padding-right;
   }
 }
 
 .px-recursive(@value){
-  [px-recursive="@{value}"] *{
+  [layout*="px-recursive:@{value}"] *{
     padding-left: pow(@harmonic-ratio, @value)*1rem;
     padding-right: $padding-left;
     --pl: $padding-left;
@@ -42,7 +42,7 @@
 }
 
 .py-recursive(@value){
-  [py-recursive="@{value}"] *{
+  [layout*="py-recursive:@{value}"] *{
     padding-top: pow(@harmonic-ratio, @value)*1rem;
     padding-bottom: $padding-top;
   }

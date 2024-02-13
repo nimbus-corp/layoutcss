@@ -10,7 +10,7 @@
 }
 
 .stack-l-gap(@gap){
-  stack-l[gap="@{gap}"]{
+  stack-l[layout*="gap:@{gap}"]{
     & > * + * {
       margin-block-start: pow(@harmonic-ratio, @gap)*1rem;
     }

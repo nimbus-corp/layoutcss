@@ -9,20 +9,20 @@
 }
 
 .center-l-max-width(@max-width){
-  center-l[max-width="@{max-width}"]{
+  center-l[layout*="max-width:@{max-width}"]{
     max-inline-size: @max-width; 
     --center-max-width: @max-width;
   }
 }
 
 .center-l-and-text(){
-  center-l[and-text]{
+  center-l[layout*="and-text"]{
     text-align:center;
   }
 }
 
 .center-l-recursive(){
-  center-l[recursive]{
+  center-l[layout*="recursive"]{
     display:flex;
     flex-direction:column;
     align-items:center;

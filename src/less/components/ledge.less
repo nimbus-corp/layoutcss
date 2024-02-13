@@ -10,13 +10,13 @@
 }
 
 .ledge-l-nowrap(){
-  ledge-l[nowrap]  {
+  ledge-l[layout*="nowrap"]  {
       flex-wrap:nowrap;
   }
 }
 
 .ledge-l-twin-width(){
-  ledge-l[twin-width] > * {
+  ledge-l[layout*="twin-width"] > * {
       flex-grow:1;
       flex-basis:0;
       min-width: 0;
@@ -24,25 +24,25 @@
 }
 
 .ledge-l-direction(@direction){
-  ledge-l[direction="@{direction}"]{
+  ledge-l[layout*="direction:@{direction}"]{
     flex-direction: @direction;
   }
 }
 
 .ledge-l-justify(@justify){
-  ledge-l[justify="@{justify}"]{
+  ledge-l[layout*="justify:@{justify}"]{
     justify-content: @justify;
   }
 }
 
 .ledge-l-align(@align){
-  ledge-l[align="@{align}"]{
+  ledge-l[layout*="align:@{align}"]{
     align-items: @align;
   }
 }
 
 .ledge-l-gap(@gap){
-  ledge-l[gap="@{gap}"]{
+  ledge-l[layout*="gap:@{gap}"]{
     gap: pow(@harmonic-ratio, @gap)*1rem;
   }
 }

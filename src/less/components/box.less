@@ -7,7 +7,13 @@
 }
 
 .box-l-max-width(@max-width){
-  box-l[max-width="@{max-width}"]{
-    max-inline-size: @max-width; 
+  box-l[layout*="max-width:@{max-width}"]{
+    max-inline-size: @max-width;
+  }
+}
+
+.box-l-grow(@grow){
+  box-l[layout*="grow"] > *{
+    width: 100%;
   }
 }
