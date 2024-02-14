@@ -24,9 +24,9 @@
 }
 
 .sidebar-l-group(@side: left, @side-width: auto, @content-min: 50%){
-  @side-selector: if((@side=right),e('[layout*=side:right"]'),);
-  @side-width-selector: if((isnumber(@side-width)),e('[layout*=side-width:@{side-width}"]'),);
-  @content-min-selector: if((not(@content-min=50%)),e('[layout*=content-min:@{content-min}"]'),);
+  @side-selector: if((@side=right),e('[layout*="side:right"]'),);
+  @side-width-selector: if((isnumber(@side-width)),e('[layout*="side-width:@{side-width}"]'),);
+  @content-min-selector: if((not(@content-min=50%)),e('[layout*="content-min:@{content-min}"]'),);
 
   @selector-one: if((@side = left), e(':first-child'), e(':last-child'));
   @selector-two: if((@side = left), e(':last-child'), e(':first-child'));
